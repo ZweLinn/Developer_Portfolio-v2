@@ -1,6 +1,64 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
-	--font-sans: 'Inter Tight', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-sans:
+        "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+        sans-serif;
+}
+
+@utility heading-1 {
+    font-size: 80px;
+    line-height: 1.1; /* Adjust as needed for spacing */
+    font-weight: bold;
+}
+@utility heading-2 {
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: bold;
+}
+@utility heading-3 {
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+@utility heading-4 {
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+@utility heading-5 {
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: bold;
+}
+@utility margin-default {
+    margin-left: 15vw;
+    margin-right: 20vw;
+    max-width: 950px;
+}
+@utility underscore {
+    background-color: #5e5e5e;
+    height: 4px;
+    width: 36px;
+}
+
+@utility dark-gray {
+    color: #5e5e5e;
+}
+
+@utility btn-primary {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-weight: 500;
+    font-family: 'Inter Tight', sans-serif;
+    background-color: black;
+    color : white;
+    font-size: 20px;
+    padding: 12px 28px;
+    border-radius: 10px;
 }
