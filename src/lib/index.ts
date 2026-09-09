@@ -2,3 +2,4 @@
 export { default as HeroSection } from "../components/sections/HeroSection.svelte";
 export { default as Button } from "../components/ui/Button.svelte";
 export { default as SectionHeadline } from "../components/ui/SectionHeadline.svelte";
+export { default as AboutMeSection } from "../components/sections/AboutMeSection.svelte";
