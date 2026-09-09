@@ -5,8 +5,13 @@
     --font-sans:
         "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
         sans-serif;
+        --color-btn-bg: #000000;
+        --color-btn-text: #ffffff;
 }
-
+.dark {
+    --color-btn-bg: #ffffff;
+    --color-btn-text: #000000;
+}
 @utility heading-1 {
     font-size: 80px;
     line-height: 1.1; /* Adjust as needed for spacing */
@@ -50,28 +55,11 @@
 }
 
 @utility btn-primary {
-    background-color: transparent;
     border: none;
     cursor: pointer;
     outline: none;
     font-weight: 500;
     font-family: 'Inter Tight', sans-serif;
-    background-color: black;
-    color : white;
-    font-size: 20px;
-    padding: 12px 28px;
-    border-radius: 10px;
-}
-
-@utility btn-primary-dark {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    font-weight: 500;
-    font-family: 'Inter Tight', sans-serif;
-    background-color: white;
-    color : black;
     font-size: 20px;
     padding: 12px 28px;
     border-radius: 10px;

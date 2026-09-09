@@ -9,6 +9,6 @@
     let { children, onClick, className , ...props} : ButtonProps = $props();
 </script>
 
-<button class="btn-primary dark:btn-primary-dark {className} {{...props}}" onclick={onClick}>
+<button class="btn-primary bg-black text-white dark:bg-white dark:text-black  {className} {{...props}}" onclick={onClick}>
   {@render children()}
 </button>
