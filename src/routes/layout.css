@@ -86,14 +86,3 @@
     padding: 8px 24px;
     border-radius: 10px;
 }
-
-@utility image {
-    width: 42%;
-    height: auto;
-    border-radius: 20px;
-    object-fit: cover;
-  }
-
-  @utility text{
-      width : 55%;
-  }

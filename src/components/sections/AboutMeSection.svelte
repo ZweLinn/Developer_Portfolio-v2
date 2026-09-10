@@ -1,33 +1,46 @@
 <script lang="ts">
     import SectionHeadline from "$components/ui/SectionHeadline.svelte";
     import image from "$assets/Portrait.jpg";
+    import colorImage from "$assets/color.jpg";
 </script>
 
 <section class="about-me mt-16">
     <SectionHeadline sectionName="About Me">About Me</SectionHeadline>
 
-    <div class="flex flex-col md:flex-row justify-between margin-default mt-8 items-stretch">
-        <img src={image} alt="My Portrait" class="image" />
-        <div class="text">
-            <p class="mb-4 ">
-                Hey, I'm Niklas, the driving force behind my freelancing agency
-                specializing in web development and data science.
+    <div
+        class="margin-default mt-8 flex flex-col items-center gap-10 text-center md:flex-row md:items-center md:justify-between md:gap-12 md:text-left"
+    >
+        <div
+            class="group relative w-64 max-w-full transition-transform duration-300 hover:scale-[1.03] sm:w-72 md:w-[40%] md:max-w-sm"
+        >
+            <img
+                src={image}
+                alt="My Portrait"
+                class="w-full rounded-[20px] object-contain"
+            />
+            <img
+                src={colorImage}
+                alt=""
+                aria-hidden="true"
+                class="absolute inset-0 h-full w-full rounded-[20px] object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            />
+        </div>
+        <div class="w-full max-w-xl text-base leading-relaxed sm:text-lg md:w-[55%]">
+            <p class="mb-4">
+                Hey, I'm Zwe Linn Maung. I'm a full-stack developer based in
+                Myanmar, currently living in Thailand. I specialize in building
+                modern web applications.
             </p>
             <p class="mb-4">
-                With years of hands-on experience tackling real-world coding
-                challenges and meeting diverse client needs, I've built a deep
-                understanding of the tech landscape. But beyond coding, my true
-                passion lies in teaching. I've had the privilege of guiding
-                hundreds of aspiring developers, focusing on making coding both
-                practical and accessible. My goal is to translate complex
-                concepts into actionable skills that you can apply right away.
+                I have hands-on experience with AI integration, building
+                AI-powered applications and leveraging AI tools to enhance
+                development workflows. My deployment expertise includes
+                traditional VPS hosting with Nginx and PM2, as well as Docker.
             </p>
             <p class="mb-4">
-                Through my courses, I’m committed to sharing the insights and
-                lessons I’ve learned in the field, so you can skip the pitfalls
-                and fast-track your development journey. If you're eager to
-                learn from real-world experience and practical know-how, let's
-                dive in together.
+                I enjoy solving problems, creating user-focused applications,
+                and continuously exploring new technologies to deliver
+                efficient, scalable solutions.
             </p>
         </div>
     </div>
