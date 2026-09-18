@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@sanity/client':
+        specifier: ^8.6.2
+        version: 8.6.2
       mode-watcher:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.57.0)
