@@ -1,33 +1,12 @@
 <script lang="ts">
-    interface WorkExperience {
-        id: number;
-        jobTitle: string;
-        company: string;
-        startDate: string;
-        endDate: string;
-    }
+    import type { Experience } from '$lib/types/sanity';
 
-    const workExperience: WorkExperience[] = [
-        {
-            id: 1,
-            jobTitle: "System Support Specialist",
-            company: "Logic Prime",
-            startDate: "2023-01",
-            endDate: "2024-12",
-        },
-        {
-            id: 2,
-            jobTitle: "Full Stack Engineer",
-            company: "YGNCode Lab",
-            startDate: "2025-09",
-            endDate: "2026-02",
-        },
-    ];
+    let { experiences }: { experiences: Experience[] } = $props();
 </script>
 
 <section class="margin-default work-experience flex flex-col-reverse lg:flex-row gap-8 justify-around w-full mt-8">
     <ul class="w-1/2">
-        {#each workExperience as experience}
+        {#each experiences as experience}
             <li class="border-b border-gray-300 pb-3">
                 <article>
                     <h2 class="font-semibold mb-2">{experience.jobTitle}</h2>
