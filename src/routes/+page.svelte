@@ -3,11 +3,14 @@
   import HeroSection from "$components/sections/HeroSection.svelte";
   import AboutMeSection from "$components/sections/AboutMeSection.svelte";
   import WorkExperienceSection from "$components/sections/WorkExperienceTable.svelte";
+
+  const {data} = $props();
+  $inspect("Hello",data.experiences);
 </script>
 
 <HeroSection />
 <AboutMeSection />
-<WorkExperienceSection />
+<WorkExperienceSection  />
 
 
 <button onclick={toggleMode} class="border-spacing-3 border-zinc-600s">Toggle theme</button>
