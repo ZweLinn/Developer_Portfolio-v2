@@ -13,8 +13,8 @@
                     <div class="flex justify-between">
                         <p class="text-sm mb-4">{experience.company}</p>
                         <p class="text-sm dark-gray mb-4">
-                            {experience.startDate} / {#if experience.endDate}
-                                {experience.endDate}
+                            {experience.startDate?.slice(0,7)} / {#if experience.endDate}
+                                {experience.endDate?.slice(0,7)}
                             {:else}
                                 Present
                             {/if}

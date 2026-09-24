@@ -4,3 +4,4 @@ export { default as Button } from "../components/ui/Button.svelte";
 export { default as SectionHeadline } from "../components/ui/SectionHeadline.svelte";
 export { default as AboutMeSection } from "../components/sections/AboutMeSection.svelte";
 export { default as WorkExperienceSection } from "../components/sections/WorkExperienceTable.svelte";
+export { default as ProjectSection } from "../components/sections/ProjectSection.svelte";
