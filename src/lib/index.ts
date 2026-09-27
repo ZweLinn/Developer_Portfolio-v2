@@ -7,4 +7,5 @@ export { default as WorkExperienceSection } from "../components/sections/WorkExp
 export { default as ProjectSection } from "../components/sections/ProjectSection.svelte";
 export { default as ProjectList } from "../components/sections/ProjectList.svelte";
 export { default as ProjectCard } from "../components/sections/ProjectCard.svelte";
+export { default as FeaturedProject } from "../components/sections/FeaturedProject.svelte";
 export { default as PortableText } from "../components/ui/PortableText.svelte";
