@@ -25,7 +25,7 @@
                 class="absolute inset-0 h-full w-full rounded-[20px] object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
         </div>
-        <div class="w-full max-w-xl text-base leading-relaxed sm:text-lg md:w-[55%]">
+        <div class="w-full max-w-xl text-base text-start leading-relaxed sm:text-lg md:w-[55%]">
             <p class="mb-4">
                 Hey, I'm Zwe Linn Maung. I'm a full-stack developer based in
                 Myanmar, currently living in Thailand. I specialize in building

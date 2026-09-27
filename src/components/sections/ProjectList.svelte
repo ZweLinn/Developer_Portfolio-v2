@@ -5,6 +5,7 @@
 
     let { projects }: { projects: ProjectLists[] } = $props();
 
+    $inspect(projects);
     const featured = $derived(projects.filter((project) => project.featured));
     const others = $derived(projects.filter((project) => !project.featured));
 </script>

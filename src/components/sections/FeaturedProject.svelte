@@ -40,12 +40,6 @@
         </div>
 
         <div class="flex flex-col gap-4 p-6 md:p-8">
-            <span
-                class="inline-flex w-fit items-center gap-1.5 rounded-full bg-zinc-900 px-3 py-1 text-xs font-medium text-white dark:bg-white dark:text-zinc-900"
-            >
-                &#9733; Featured
-            </span>
-
             <h3 class="heading-4">{project.title}</h3>
 
             {#if project.summary}
