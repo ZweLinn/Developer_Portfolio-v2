@@ -7,8 +7,8 @@
     const cover = $derived(
         project.coverImage
             ? urlFor(project.coverImage)
-                  .width(1200)
-                  .height(800)
+                  .width(1600)
+                  .height(900)
                   .fit("crop")
                   .auto("format")
                   .url()
@@ -17,42 +17,46 @@
 </script>
 
 {#snippet body()}
-    <article class="group grid items-center gap-6 md:grid-cols-2 md:gap-12">
-        <div
-            class="aspect-video w-full overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800"
-        >
+    <article class="group relative w-full overflow-hidden rounded-2xl bg-zinc-900">
+        <div class="relative aspect-video w-full overflow-hidden md:aspect-[2.4/1]">
             {#if cover}
                 <img
                     src={cover}
                     alt={project.coverImage?.alt ?? project.title}
                     loading="lazy"
-                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                    class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
             {/if}
-        </div>
 
-        <div class="flex flex-col">
-            <h3 class="heading-4 tracking-tight">{project.title}</h3>
+            <div
+                class="absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-transparent"
+            ></div>
 
-            {#if project.summary}
-                <p class="mt-3 leading-relaxed text-zinc-500 dark:text-zinc-400">
-                    {project.summary}
-                </p>
-            {/if}
+            <div class="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6 md:p-10">
+                <h3 class="heading-4 tracking-tight text-white md:heading-3">
+                    {project.title}
+                </h3>
 
-            {#if project.techStack?.length}
-                <p class="mt-4 text-xs tracking-wide text-zinc-500 dark:text-zinc-400">
-                    {project.techStack.join(" · ")}
-                </p>
-            {/if}
+                {#if project.summary}
+                    <p class="max-w-2xl text-sm leading-relaxed text-white/80 md:text-base hidden md:inline">
+                        {project.summary}
+                    </p>
+                {/if}
 
-            {#if project.slug}
-                <span
-                    class="mt-6 inline-flex items-center gap-2 text-sm font-medium underline-offset-4 group-hover:underline"
-                >
-                    View project <span aria-hidden="true">&rarr;</span>
-                </span>
-            {/if}
+                {#if project.techStack?.length}
+                    <p class="text-xs tracking-wide text-white/70">
+                        {project.techStack.join(" · ")}
+                    </p>
+                {/if}
+
+                {#if project.slug}
+                    <span
+                        class="mt-2 inline-flex items-center gap-2 text-sm font-medium text-white underline-offset-4 group-hover:underline"
+                    >
+                        View project <span aria-hidden="true">&rarr;</span>
+                    </span>
+                {/if}
+            </div>
         </div>
     </article>
 {/snippet}
