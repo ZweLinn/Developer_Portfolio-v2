@@ -33,7 +33,7 @@
             ></div>
 
             <div class="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6 md:p-10">
-                <h3 class="heading-4 tracking-tight text-white md:heading-3">
+                <h3 class="text-xl font-bold sm:heading-4 tracking-tight text-white md:heading-3">
                     {project.title}
                 </h3>
 
