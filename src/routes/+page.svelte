@@ -3,6 +3,7 @@
   import HeroSection from "$components/sections/HeroSection.svelte";
   import AboutMeSection from "$components/sections/AboutMeSection.svelte";
   import WorkExperienceSection from "$components/sections/WorkExperienceTable.svelte";
+  import ProjectSection from "$components/sections/ProjectSection.svelte";
   import type { PageProps } from './$types';
 
   const { data }: PageProps = $props();
@@ -11,6 +12,7 @@
 <HeroSection />
 <AboutMeSection />
 <WorkExperienceSection experiences={data.experiences} />
+<ProjectSection projects={data.projectLists} />
 
 
 <button onclick={toggleMode} class="border-spacing-3 border-zinc-600s">Toggle theme</button>
