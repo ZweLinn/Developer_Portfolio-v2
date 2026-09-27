@@ -17,54 +17,44 @@
 </script>
 
 {#snippet body()}
-    <div
-        class="group grid overflow-hidden rounded-2xl border border-zinc-200 bg-white transition duration-300 hover:shadow-lg md:grid-cols-2 dark:border-zinc-800 dark:bg-zinc-900"
-    >
+    <article class="group grid items-center gap-6 md:grid-cols-2 md:gap-12">
         <div
-            class="aspect-video w-full overflow-hidden bg-zinc-100 md:aspect-auto md:h-full dark:bg-zinc-800"
+            class="aspect-video w-full overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800"
         >
             {#if cover}
                 <img
                     src={cover}
                     alt={project.coverImage?.alt ?? project.title}
                     loading="lazy"
-                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                 />
-            {:else}
-                <div
-                    class="flex h-full min-h-48 w-full items-center justify-center text-sm dark-gray"
-                >
-                    No image
-                </div>
             {/if}
         </div>
 
-        <div class="flex flex-col gap-4 p-6 md:p-8">
-            <h3 class="heading-4">{project.title}</h3>
+        <div class="flex flex-col">
+            <h3 class="heading-4 tracking-tight">{project.title}</h3>
 
             {#if project.summary}
-                <p class="leading-relaxed dark-gray">{project.summary}</p>
+                <p class="mt-3 leading-relaxed text-zinc-500 dark:text-zinc-400">
+                    {project.summary}
+                </p>
             {/if}
 
             {#if project.techStack?.length}
-                <ul class="flex flex-wrap gap-2">
-                    {#each project.techStack as tech}
-                        <li
-                            class="rounded-md bg-zinc-100 px-2 py-1 text-xs dark:bg-zinc-800"
-                        >
-                            {tech}
-                        </li>
-                    {/each}
-                </ul>
+                <p class="mt-4 text-xs tracking-wide text-zinc-500 dark:text-zinc-400">
+                    {project.techStack.join(" · ")}
+                </p>
             {/if}
 
             {#if project.slug}
-                <span class="mt-auto pt-2 text-sm font-medium">
-                    View project &rarr;
+                <span
+                    class="mt-6 inline-flex items-center gap-2 text-sm font-medium underline-offset-4 group-hover:underline"
+                >
+                    View project <span aria-hidden="true">&rarr;</span>
                 </span>
             {/if}
         </div>
-    </div>
+    </article>
 {/snippet}
 
 {#if project.slug}

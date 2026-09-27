@@ -11,7 +11,7 @@
         class="margin-default mt-8 flex flex-col items-center gap-10 text-center md:flex-row md:items-center md:justify-between md:gap-12 md:text-left"
     >
         <div
-            class="group relative w-64 max-w-full transition-transform duration-300 hover:scale-[1.03] sm:w-72 md:w-[40%] md:max-w-sm"
+            class="group relative w-64 max-w-full  sm:w-72 md:w-[40%] md:max-w-sm"
         >
             <img
                 src={image}
