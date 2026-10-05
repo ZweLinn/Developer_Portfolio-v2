@@ -135,14 +135,10 @@ export type Skills = {
   _createdAt: string
   _updatedAt: string
   _rev: string
-  skillList?: Array<{
-    skillName?: string
-    iconClass?: string
-    _key: string
-  }>
+  skillList?: Skill[]
 }
 
-export type Skill = {
+export interface Skill {
   skillName?: string
   iconClass?: string
   _key: string
