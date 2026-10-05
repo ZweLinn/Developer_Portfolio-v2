@@ -7,12 +7,15 @@
   import type { PageProps } from './$types';
 
   const { data }: PageProps = $props();
+
+  $inspect(data.skills);
 </script>
 
 <HeroSection />
 <AboutMeSection />
 <WorkExperienceSection experiences={data.experiences} />
 <ProjectSection projects={data.projectLists} />
+
 
 
 <button onclick={toggleMode} class="border-spacing-3 border-zinc-600s">Toggle theme</button>

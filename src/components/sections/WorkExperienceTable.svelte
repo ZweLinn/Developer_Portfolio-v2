@@ -11,7 +11,7 @@
                 <article>
                     <h2 class="font-semibold mb-2">{experience.jobTitle}</h2>
                     <div class="flex justify-between">
-                        <div class="flex flex-col md:flex-row">
+                        <div class="flex flex-col md:flex-row gap-0 md:gap-4">
                             <p class="text-sm mb-4">{experience.company}</p>
                             <p class="text-sm dark-gray mb-4">
                                 {experience.startDate?.slice(0,7)} / {#if experience.endDate}

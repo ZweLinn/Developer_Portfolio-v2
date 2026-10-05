@@ -127,3 +127,23 @@ export type Project = {
 	featured?: boolean;
 	order?: number;
 };
+
+
+export type Skills = {
+  _id: string
+  _type: 'skills'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  skillList?: Array<{
+    skillName?: string
+    iconClass?: string
+    _key: string
+  }>
+}
+
+export type Skill = {
+  skillName?: string
+  iconClass?: string
+  _key: string
+}
