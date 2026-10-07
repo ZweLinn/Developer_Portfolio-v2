@@ -5,10 +5,10 @@
   import WorkExperienceSection from "$components/sections/WorkExperienceTable.svelte";
   import ProjectSection from "$components/sections/ProjectSection.svelte";
   import SkillSection from "$components/sections/SkillSection.svelte";
+  import Certification from "$components/sections/Certification.svelte";
   import type { PageProps } from './$types';
 
   const { data }: PageProps = $props();
-  $inspect(data.skills[0].skillList , "test")
 </script>
 
 <HeroSection />
@@ -16,6 +16,7 @@
 <WorkExperienceSection experiences={data.experiences} />
 <ProjectSection projects={data.projectLists} />
 <SkillSection skills={data.skills[0].skillList ?? []} />
+<Certification certification={data.certifications[0].certificationList ?? []} />
 
 
 <button onclick={toggleMode} class="border-spacing-3 border-zinc-600s">Toggle theme</button>

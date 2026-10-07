@@ -2,7 +2,6 @@
     import type { Skill } from "$lib/types/sanity";
     import SectionHeadline from "$components/ui/SectionHeadline.svelte";
     let { skills }: { skills: Skill[] } = $props();
-    $inspect(skills, "tset");
 </script>
 
 <section class="skills mt-16">

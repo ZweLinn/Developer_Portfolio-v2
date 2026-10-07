@@ -1,5 +1,5 @@
 import { SanityClient } from "$utils/sanity";
-import type { Experience, Project, ProjectLists, Skills } from "$lib/types/sanity";
+import type { Experience, Project, ProjectLists, Skills , Certifications} from "$lib/types/sanity";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async () => {
@@ -14,9 +14,10 @@ export const load: PageLoad = async () => {
     );
 
     const skills: Skills[] = await SanityClient.fetch(`*[_type == "skills"]`);
+    const certifications: Certifications[] = await SanityClient.fetch(`*[_type == "certifications"]`);
 
 
-	const projects: Project[] = await SanityClient.fetch(`*[_type == "project"]`);
+    const projects: Project[] = await SanityClient.fetch(`*[_type == "project"]`);
 
-	return { experiences, projectLists, projects, skills };
+	return { experiences, projectLists, projects, skills, certifications };
 };

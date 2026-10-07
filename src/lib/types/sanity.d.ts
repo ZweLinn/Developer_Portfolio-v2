@@ -143,3 +143,22 @@ export interface Skill {
   iconClass?: string
   _key: string
 }
+
+export type Certifications = {
+  _id: string
+  _type: 'certifications'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  certificationList?: Array<{
+    certificationName?: string
+    certificationUrl?: string
+    _key: string
+  }>
+}
+
+export interface Certification {
+    certificationName?: string
+    certificationUrl?: string
+    _key: string
+}

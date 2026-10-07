@@ -10,3 +10,4 @@ export { default as ProjectCard } from "../components/sections/ProjectCard.svelt
 export { default as FeaturedProject } from "../components/sections/FeaturedProject.svelte";
 export { default as PortableText } from "../components/ui/PortableText.svelte";
 export { default as SkillSection } from "../components/sections/SkillSection.svelte";
+export { default as Certification } from "../components/sections/Certification.svelte";
