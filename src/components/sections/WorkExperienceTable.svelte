@@ -7,7 +7,7 @@
 <section class="margin-default work-experience flex flex-col-reverse lg:flex-row gap-8 justify-around  mt-8">
     <ul class="w-1/2">
         {#each experiences as experience}
-            <li class="border-b border-gray-300 pb-3">
+            <li class="border-b border-gray-300 py-3">
                 <article>
                     <h2 class="font-semibold mb-2">{experience.jobTitle}</h2>
                     <div class="flex justify-between">

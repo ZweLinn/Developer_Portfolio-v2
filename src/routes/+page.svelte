@@ -7,6 +7,7 @@
   import SkillSection from "$components/sections/SkillSection.svelte";
   import Certification from "$components/sections/Certification.svelte";
   import type { PageProps } from './$types';
+    import ContactSection from "$components/sections/ContactSection.svelte";
 
   const { data }: PageProps = $props();
 </script>
@@ -17,6 +18,6 @@
 <ProjectSection projects={data.projectLists} />
 <SkillSection skills={data.skills[0].skillList ?? []} />
 <Certification certification={data.certifications[0].certificationList ?? []} />
-
+<ContactSection/>
 
 <button onclick={toggleMode} class="border-spacing-3 border-zinc-600s">Toggle theme</button>

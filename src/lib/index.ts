@@ -11,3 +11,4 @@ export { default as FeaturedProject } from "../components/sections/FeaturedProje
 export { default as PortableText } from "../components/ui/PortableText.svelte";
 export { default as SkillSection } from "../components/sections/SkillSection.svelte";
 export { default as Certification } from "../components/sections/Certification.svelte";
+export { default as ContactSection } from "../components/sections/ContactSection.svelte";
