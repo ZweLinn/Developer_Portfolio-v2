@@ -1,6 +1,10 @@
 <script lang="ts">
     import SectionHeadline from "$components/ui/SectionHeadline.svelte";
     const email = "zewlinnmg@gmail.com";
+
+
+    const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+    const WEB3FORMS_ACCESS_KEY = "a001cb5b-3eba-4590-b6bf-2cf07e697b8e";
     const socials = [
         {
             name: "GitHub",
@@ -19,8 +23,10 @@
     let message = $state("");
     let errors = $state<{ name?: string; email?: string; message?: string }>({});
     let submitted = $state(false);
+    let submitting = $state(false);
+    let submitError = $state("");
 
-    function handleSubmit(event: SubmitEvent) {
+    async function handleSubmit(event: SubmitEvent) {
         event.preventDefault();
 
         const nextErrors: typeof errors = {};
@@ -37,13 +43,45 @@
 
         errors = nextErrors;
 
-        if (Object.keys(nextErrors).length === 0) {
+        if (Object.keys(nextErrors).length > 0) return;
+
+        submitting = true;
+        submitted = false;
+        submitError = "";
+
+        try {
+            const response = await fetch(WEB3FORMS_ENDPOINT, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    name,
+                    email: emailAddress,
+                    message,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok || !data.success) {
+                throw new Error(data.message || "Request failed");
+            }
+
             submitted = true;
             name = "";
             emailAddress = "";
             message = "";
+        } catch {
+            submitError =
+                "Something went wrong sending your message. Please try again or email me directly.";
+        } finally {
+            submitting = false;
         }
     }
+
 
     const fieldClasses =
         "w-full rounded-lg border border-zinc-300 bg-transparent px-4 py-3 text-base " +
@@ -114,9 +152,10 @@
 
             <button
                 type="submit"
-                class="btn-primary-sm md:btn-primary-md lg:btn-primary bg-black text-white dark:bg-white dark:text-black self-start"
+                disabled={submitting}
+                class="btn-primary-sm md:btn-primary-md lg:btn-primary bg-black text-white dark:bg-white dark:text-black self-start disabled:cursor-not-allowed disabled:opacity-60"
             >
-                Send message
+                {submitting ? "Sending..." : "Send message"}
             </button>
 
             {#if submitted}
@@ -125,6 +164,12 @@
                     class="text-sm font-medium text-emerald-600 dark:text-emerald-400"
                 >
                     Thanks for reaching out! I'll get back to you soon.
+                </p>
+            {/if}
+
+            {#if submitError}
+                <p role="alert" class="text-sm font-medium text-red-500">
+                    {submitError}
                 </p>
             {/if}
         </form>
