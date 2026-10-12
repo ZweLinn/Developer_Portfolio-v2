@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { toggleMode } from "mode-watcher";
   import HeroSection from "$components/sections/HeroSection.svelte";
   import AboutMeSection from "$components/sections/AboutMeSection.svelte";
   import WorkExperienceSection from "$components/sections/WorkExperienceTable.svelte";
@@ -19,5 +18,3 @@
 <SkillSection skills={data.skills[0].skillList ?? []} />
 <Certification certification={data.certifications[0].certificationList ?? []} />
 <ContactSection/>
-
-<button onclick={toggleMode} class="border-spacing-3 border-zinc-600s">Toggle theme</button>
