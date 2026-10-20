@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-<ModeWatcher />
+<ModeWatcher defaultMode="light" />
 <Header />
 {@render children()}
 <Footer />
