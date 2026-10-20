@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { toggleMode, mode } from "mode-watcher";
+	import { goto } from "$app/navigation";
+	import { page } from "$app/state";
+	import { tick } from "svelte";
 
 	const navLinks = [
 		{ label: "About Me", href: "/#About Me" },
@@ -16,6 +19,29 @@
 	function closeMenu() {
 		menuOpen = false;
 	}
+
+	async function handleNavClick(event: MouseEvent, href: string) {
+		event.preventDefault();
+		closeMenu();
+
+		const targetId = href.split("#")[1] ?? "";
+
+		if (page.url.pathname !== "/") {
+			await goto(href);
+			await tick();
+		} else {
+			history.pushState(null, "", href);
+		}
+
+		const target = document.getElementById(targetId);
+		if (!target) return;
+
+		const header = document.querySelector("header");
+		const offset = (header?.getBoundingClientRect().height ?? 0) + 16;
+		const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+		window.scrollTo({ top, behavior: "smooth" });
+	}
 </script>
 
 <header
@@ -28,6 +54,7 @@
 			{#each navLinks as link (link.href)}
 				<a
 					href={link.href}
+					onclick={(event) => handleNavClick(event, link.href)}
 					class="dark-gray text-sm font-medium transition-colors hover:text-black dark:hover:text-white"
 				>
 					{link.label}
@@ -135,7 +162,7 @@
 				{#each navLinks as link (link.href)}
 					<a
 						href={link.href}
-						onclick={closeMenu}
+						onclick={(event) => handleNavClick(event, link.href)}
 						class="dark-gray py-2 text-sm font-medium transition-colors hover:text-black dark:hover:text-white"
 					>
 						{link.label}
