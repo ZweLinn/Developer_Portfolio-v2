@@ -1,7 +1,7 @@
 <script lang="ts">
     import Button from "$components/ui/Button.svelte";
 
-    const cvUrl = 'https://drive.google.com/file/d/10n0NnNQCVzNzD4X6kuawm536diVx4jnv/view';
+    const cvUrl = 'https://drive.google.com/file/d/1-r-aIvmF1hJ4SnrkmvliiA3PrI6T_WPi/view';
     const cv = () => {
         window.open(cvUrl, '_blank', 'noopener,noreferrer')
     }
