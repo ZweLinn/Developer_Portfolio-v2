@@ -26,7 +26,7 @@
                     src={cover}
                     alt={project.coverImage?.alt ?? project.title}
                     loading="lazy"
-                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] mix-blend-normal"
                 />
             {/if}
         </div>

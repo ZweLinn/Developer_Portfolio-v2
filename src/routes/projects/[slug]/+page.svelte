@@ -99,11 +99,13 @@
     </header>
 
     {#if cover}
-        <img
-            src={cover}
-            alt={project.coverImage?.alt ?? project.title ?? "Project cover"}
-            class="mt-8 w-full rounded-2xl"
-        />
+        <div class="mt-8 overflow-hidden rounded-2xl bg-neutral-950">
+            <img
+                src={cover}
+                alt={project.coverImage?.alt ?? project.title ?? "Project cover"}
+                class="block w-full"
+            />
+        </div>
     {/if}
 
     {#if project.description?.length}
